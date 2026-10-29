@@ -1,0 +1,502 @@
+
+/* 1. WARNA DAN PENGATURAN DASAR */
+:root {
+  --blue: #8dc9f7;
+  --blue-light: #edf7ff;
+  --navy: #102c4d;
+  --text: #34445a;
+  --white: #ffffff;
+  --border: #dce8f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 2. NAVIGASI */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 8%;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  color: var(--navy);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.logo span {
+  color: #4d9fe5;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.navbar nav a {
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+  color: #358bd5;
+}
+
+.language-button {
+  border: 1px solid var(--border);
+  background: var(--blue-light);
+  color: var(--navy);
+  padding: 8px 13px;
+  border-radius: 9px;
+}
+
+/* 3. BAGIAN UTAMA */
+.section {
+  padding: 90px 8%;
+}
+
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 55px;
+  background: linear-gradient(135deg, #ffffff 45%, #eaf6ff);
+}
+
+.eyebrow {
+  color: #438fd0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: #438fd0;
+}
+
+.hero h2 {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.hero-description {
+  max-width: 560px;
+  margin-bottom: 25px;
+}
+
+.location {
+  margin-top: 22px;
+  color: #6b7d91;
+  font-size: 0.9rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 700;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.primary {
+  color: white;
+  background: var(--navy);
+}
+
+.primary:hover {
+  background: #214b77;
+}
+
+.secondary {
+  color: var(--navy);
+  background: white;
+  border: 1px solid var(--border);
+}
+
+/* 4. FOTO PROFIL */
+.hero-visual {
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
+}
+
+.photo-frame {
+  padding: 10px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: 0 20px 55px rgba(16, 44, 77, 0.12);
+  overflow: hidden;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 24%;
+  border-radius: 20px;
+}
+
+.photo-label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 14px 18px;
+  border-radius: 14px;
+  margin: -25px 15px 0;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(16, 44, 77, 0.08);
+}
+
+.photo-label strong {
+  color: var(--navy);
+}
+
+.photo-label span {
+  font-size: 0.8rem;
+  color: #6b7d91;
+}
+
+/* 5. JUDUL DAN KARTU */
+.section-title {
+  color: var(--navy);
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  margin-bottom: 25px;
+}
+
+.section-description {
+  margin-top: -15px;
+  margin-bottom: 25px;
+}
+
+.about-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fbfdff;
+}
+
+.about-card > p {
+  margin-bottom: 28px;
+}
+
+.about-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.about-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-details span {
+  color: #6b7d91;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.about-details strong {
+  color: var(--navy);
+}
+
+#skills {
+  background: var(--blue-light);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.info-card,
+.project-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 26px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.info-card:hover,
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(16, 44, 77, 0.08);
+}
+
+.card-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--navy);
+  background: var(--blue-light);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.info-card h3,
+.project-card h3 {
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.project-number {
+  display: inline-block;
+  color: #438fd0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: var(--blue-light);
+  color: #285f90;
+  font-size: 0.78rem;
+}
+
+.note {
+  color: #718196;
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+/* 6. PENGALAMAN */
+#experience {
+  background: #f7fbff;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  padding: 23px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-label {
+  color: #438fd0;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.timeline-item h3 {
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+
+.subheading {
+  color: var(--navy);
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.achievement-list p {
+  padding: 13px 17px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+/* 7. KONTAK DAN FOOTER */
+.contact-section {
+  text-align: center;
+  background: linear-gradient(135deg, #edf7ff, #ffffff);
+}
+
+.contact-section > p:not(.eyebrow):not(.note) {
+  margin-bottom: 25px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.contact-links a {
+  padding: 10px 17px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  color: var(--navy);
+  transition: background 0.2s;
+}
+
+.contact-links a:hover {
+  background: var(--blue-light);
+}
+
+.cv-button {
+  margin-top: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 8%;
+  background: var(--navy);
+  color: white;
+  font-size: 0.85rem;
+}
+
+footer p + p {
+  margin-top: 5px;
+  color: #c6d9eb;
+}
+
+/* 8. ANIMASI HALUS */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-text,
+  .hero-visual {
+    animation: appear 0.8s ease both;
+  }
+
+  .hero-visual {
+    animation-delay: 0.15s;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* 9. TAMPILAN HP */
+@media (max-width: 850px) {
+  .navbar {
+    padding: 15px 5%;
+    flex-wrap: wrap;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    gap: 12px 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    max-width: 300px;
+  }
+
+  .section {
+    padding: 65px 6%;
+  }
+}
+
+@media (max-width: 520px) {
+  .card-grid,
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .hero h1 {
+    font-size: 2.35rem;
+  }
+
+  .about-card,
+  .info-card,
+  .project-card {
+    padding: 20px;
+  }
+}
